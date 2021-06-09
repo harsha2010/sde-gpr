@@ -70,11 +70,11 @@ class Detector:
         return scores
 
 
-    def detect(self):
-        # Classify points as normal or anomalous based on threshold
-        assert self.threshold is not None, "Set the detection threshold"
-        assert self.scores is not None, "Provide anomaly scores"
-        return [1 if score>self.threshold else 0 for score in self.scores]
+    # def detect(self):
+    #     # Classify points as normal or anomalous based on threshold
+    #     assert self.threshold is not None, "Set the detection threshold"
+    #     assert self.scores is not None, "Provide anomaly scores"
+    #     return [1 if score>self.threshold else 0 for score in self.scores]
 
 
     def plot_scores(self, X_test, t_test):
@@ -83,29 +83,3 @@ class Detector:
         ax[0].plot(t_test, X_test, color='k')
         ax[1].plot(t_test, self.scores, color='r')
         plt.show()
-
-
-def detect(scores, threshold):
-    return [1 if score>threshold else 0 for score in scores]
-
-
-def binary_confusion(true, pred):
-    # pred: predicted class labels (0 normal, 1 anomaly)
-    # true: true class labels
-    assert len(pred)==len(true), "Number of predictions must match number of labels."
-    p = sum(pred)
-    n = len(pred) - p
-    tp = sum(np.multiply(pred, true))
-    fp = p - tp
-    fn = sum(true) - tp
-    tn = n - fn
-    return tn, fp, fn, tp
-
-def rates(true, pred):
-    # Returns FPR, TPR
-    tn, fp, fn, tp = binary_confusion(true, pred)
-    return tp/(tp + fn), fp/(fp + tn)
-
-def auc(scores, threshold, n=1000):
-    # Returns the AUC of the detector
-    pass

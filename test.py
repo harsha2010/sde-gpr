@@ -10,6 +10,7 @@ X_test = np.random.randn(N)
 X_test[int(N/2):] = 5 * X_test[int(N/2):]
 X_test = np.cumsum(X_test)
 t_test = np.arange(N)
+true = np.concatenate((np.zeros(int(N/2)), np.ones(int(N/2))))
 
 ### Test Estimation ###
 # drk = SE_Kernel(l=0.5, sigma=1)
@@ -35,3 +36,6 @@ detector = Detector(train_drk, train_dfk, test_drk, test_dfk, 0.01)
 detector.anomaly_score(X_train, t_train, X_test, t_test, W)
 detector.plot_scores(X_test, t_test)
 
+from evaluation import *
+AUC = auc(detector.scores, true, n=1000, plot=True)
+print("AUC: ",AUC)
