@@ -69,17 +69,20 @@ class Detector:
 
         return scores
 
-
-    # def detect(self):
-    #     # Classify points as normal or anomalous based on threshold
-    #     assert self.threshold is not None, "Set the detection threshold"
-    #     assert self.scores is not None, "Provide anomaly scores"
-    #     return [1 if score>self.threshold else 0 for score in self.scores]
-
-
     def plot_scores(self, X_test, t_test):
         assert self.scores is not None, "Set the anomaly scores."
         fig, ax = plt.subplots(nrows=2,ncols=1)
         ax[0].plot(t_test, X_test, color='k')
         ax[1].plot(t_test, self.scores, color='r')
         plt.show()
+
+    # def plot_nyc_results(self, X_test, ts_test, anomaly_ts):
+    #     assert self.scores is not None, "Set the anomaly scores."
+    #     assert self.threshold is not None, "Set the detection threshold."
+    #     fig, ax = plt.subplots(nrows=2,ncols=1)
+    #     ax[0].plot(ts_test, X_test, color='k')
+    #     for anomaly in anomaly_ts:
+    #         ax[0].axvline(anomaly, color='r', linestyle='--')
+    #     ax[1].plot(ts_test, self.scores, color='r')
+    #     ax[1].axhline(self.threshold, color='k', linestyle='--')
+    #     plt.show()

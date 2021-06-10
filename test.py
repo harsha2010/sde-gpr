@@ -1,7 +1,7 @@
 from detection import *
 
 # test time series
-N = 100
+N = 1000
 X_train = np.random.randn(N)
 X_train = np.cumsum(X_train)
 t_train = np.arange(N)
@@ -33,9 +33,12 @@ W = 10
 
 # Testing detector
 detector = Detector(train_drk, train_dfk, test_drk, test_dfk, 0.01)
+detector.bootstrap(X_train, t_train, 0.05, 200, W)
 detector.anomaly_score(X_train, t_train, X_test, t_test, W)
 detector.plot_scores(X_test, t_test)
 
 from evaluation import *
 AUC = auc(detector.scores, true, n=1000, plot=True)
+FPR = get_fpr(detector.scores, detector.threshold, true)
 print("AUC: ",AUC)
+print("FPR: ",FPR)
