@@ -8,7 +8,7 @@ def load(train_test_split=0.3):
     # ts: timestamps
 
     # Read in NYC taxi data
-    df = pd.read_csv('nyc_taxi.csv', dayfirst=True, parse_dates=True, )
+    df = pd.read_csv('data/nyc_taxi.csv', dayfirst=True, parse_dates=True, )
     ts = pd.to_datetime(df["timestamp"])
     x = np.array(df["value"])
 
@@ -37,7 +37,7 @@ def load(train_test_split=0.3):
     data_train = data[:s]; data_test = data[s:]
 
     # Read in anomaly data
-    labels =  eval(open("nyc_anomalies.txt").read())
+    labels =  eval(open("data/nyc_anomalies.txt").read())
     anomaly_times = labels["nyc_taxi"]
     anomaly_ts = list(pd.to_datetime(anomaly_times))
     anomaly_index = [list(ts_test).index(anomaly) for anomaly in anomaly_ts]

@@ -22,7 +22,7 @@ if __name__=="__main__":
     ### Kernel functions
     train_drift_kernel = se(l=0.25, sigma=0.2)
     diffusion_kernel = poly(power=0,scale=1)
-    test_drift_kernel = poly(power=1, scale=50)
+    test_drift_kernel = poly(power=1, scale=5)
 
     ### Initialise detector
     detector = Detector(train_drift_kernel, diffusion_kernel, test_drift_kernel, diffusion_kernel, 0.01)

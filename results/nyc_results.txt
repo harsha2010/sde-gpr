@@ -1,0 +1,49 @@
+------- NYC results -------
+---- 10/06/21 14:00:52 ----
+Desired FPR: 1.00%
+Realised FPR: 5.70%
+Corrected FPR: 1.54%
+AUC: 0.973
+
+------- NYC results -------
+---- 10/06/21 14:12:48 ----
+Desired FPR: 1.00%
+Realised FPR: 6.30%
+Corrected FPR: 1.83%
+AUC: 0.973
+
+------- NYC results -------
+---- 10/06/21 14:15:08 ----
+Desired FPR: 1.00%
+Realised FPR: 6.30%
+Corrected FPR: 1.83%
+AUC: 0.973
+
+------- NYC results -------
+---- 10/06/21 14:22:54 ----
+Desired FPR: 1.00%
+Realised FPR: 6.30%
+Corrected FPR: 1.83%
+AUC: 0.973
+
+------- NYC results -------
+---- 10/06/21 14:24:37 ----
+Desired FPR: 1.00%
+Realised FPR: 6.30%
+Corrected FPR: 1.83%
+AUC: 0.973
+
+------- NYC results -------
+---- 10/06/21 14:27:39 ----
+Desired FPR: 1.00%
+Realised FPR: 6.59%
+Corrected FPR: 1.91%
+AUC: 0.973
+
+------- NYC results -------
+---- 10/06/21 14:31:24 ----
+Desired FPR: 1.00%
+Realised FPR: 6.51%
+Corrected FPR: 1.91%
+AUC: 0.973
+
